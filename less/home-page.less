@@ -4,6 +4,10 @@
 
   .intro {
 
+    .main-h {
+      .ez-img(100%, 5px)
+    }
+
     h2 {
       padding: 15px;
     }
@@ -20,9 +24,8 @@
     width: 100%;
 
     img {
-      width: 28%;
+      .ez-img(28%, 20px)
       margin: 20px 2.5%;
-      border-radius: 20px;
       height: 100%;
     }
   }
@@ -58,18 +61,66 @@
       }
 
       .btn {
+        .cstm-btn(25%, 10px, @btn-bg-color);
+        color: @porcelain;
+        font-size: 1.5rem;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: bold;
       }
     }
 
-    .walk-img {
+    .walk-img {)
       width: 46%;
       margin-left: 4%;
       
       img {
-        width: 100%;
+        .ez-img(100%, 10px);
         height: auto;
-        border-radius: 10px;
       }
     }
   }
 }// home
+
+@media( max-width: 500px ) {
+  .home {
+    .space-images {
+      flex-wrap: nowrap;
+      justify-content: center;
+
+      .blast{
+        width: 90%;
+      }
+
+      .sky {
+        .hide();
+      }
+
+      .launch {
+        .hide();
+      }
+    }
+
+    .walk {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 20px;
+      border-top: 1px solid @main-border-color;
+      padding: 20px;
+
+      .walk-text {
+        width: 100%;
+
+        .btn {
+          .cstm-btn(100%, 25px, @btn-bg-color);
+        }
+      }
+
+      .walk-img {
+        width: 100%;
+        margin-left: 0%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
